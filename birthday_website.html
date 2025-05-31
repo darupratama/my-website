@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untuk Cinta Hatiku - Nasya Yuanka Janwa</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 40px 0;
+            color: #fff;
+            position: relative;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: #e91e63;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: heartbeat 2s ease-in-out infinite;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .love-message {
+            font-size: 1.5rem;
+            color: #d81b60;
+            font-style: italic;
+            margin: 20px 0;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .girlfriend-name {
+            font-size: 3.5rem;
+            background: linear-gradient(45deg, #e91e63, #ff5722);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+            margin: 20px 0;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { filter: drop-shadow(0 0 10px #e91e63); }
+            to { filter: drop-shadow(0 0 20px #ff5722); }
+        }
+
+        .age-badge {
+            display: inline-block;
+            background: linear-gradient(45deg, #e91e63, #f06292);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin: 20px 0;
+            box-shadow: 0 8px 16px rgba(233, 30, 99, 0.3);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 8px 16px rgba(233, 30, 99, 0.3); }
+            50% { transform: scale(1.05); box-shadow: 0 12px 24px rgba(233, 30, 99, 0.4); }
+            100% { transform: scale(1); box-shadow: 0 8px 16px rgba(233, 30, 99, 0.3); }
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 40px 0;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 25px;
+            padding: 35px;
+            box-shadow: 0 15px 35px rgba(233, 30, 99, 0.1);
+            border: 2px solid rgba(233, 30, 99, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(233, 30, 99, 0.2);
+            border-color: rgba(233, 30, 99, 0.3);
+        }
+
+        .card h2 {
+            color: #e91e63;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 3px solid #f8bbd9;
+            padding-bottom: 10px;
+        }
+
+        .love-letter {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #2d3748;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+
+        .romantic-highlight {
+            background: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .doa-section {
+            margin: 20px 0;
+        }
+
+        .doa-item {
+            background: linear-gradient(135deg, #e91e63 0%, #f06292 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 20px;
+            margin: 15px 0;
+            box-shadow: 0 10px 20px rgba(233, 30, 99, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .doa-item:hover {
+            transform: scale(1.02);
+        }
+
+        .arabic-text {
+            font-size: 1.4rem;
+            font-weight: bold;
+            text-align: right;
+            margin-bottom: 15px;
+            line-height: 2;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .translation {
+            font-style: italic;
+            font-size: 1.1rem;
+            opacity: 0.95;
+            text-align: left;
+        }
+
+        .floating-hearts {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .heart {
+            position: absolute;
+            color: #ff69b4;
+            font-size: 2rem;
+            animation: float-heart 6s ease-in-out infinite;
+            opacity: 0.7;
+        }
+
+        .heart:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .heart:nth-child(2) { left: 20%; animation-delay: 1s; }
+        .heart:nth-child(3) { left: 30%; animation-delay: 2s; }
+        .heart:nth-child(4) { left: 70%; animation-delay: 1.5s; }
+        .heart:nth-child(5) { left: 80%; animation-delay: 0.5s; }
+        .heart:nth-child(6) { left: 50%; animation-delay: 3s; }
+
+        @keyframes float-heart {
+            0%, 100% { transform: translateY(100vh) rotate(0deg); }
+            50% { transform: translateY(-100px) rotate(180deg); }
+        }
+
+        .love-cake {
+            text-align: center;
+            font-size: 5rem;
+            margin: 30px 0;
+            animation: cake-sparkle 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes cake-sparkle {
+            from { filter: drop-shadow(0 0 15px #e91e63); }
+            to { filter: drop-shadow(0 0 25px #ff69b4); }
+        }
+
+        .romantic-wishes {
+            grid-column: 1 / -1;
+            text-align: center;
+            background: linear-gradient(135deg, #e91e63 0%, #f06292 100%);
+            color: white;
+            border-radius: 25px;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .romantic-wishes::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            animation: shine 3s linear infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .romantic-wishes h2 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .love-wish {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 25px;
+            margin: 20px 0;
+            font-size: 1.2rem;
+            line-height: 1.7;
+            position: relative;
+            z-index: 1;
+        }
+
+        .love-quote {
+            font-style: italic;
+            font-size: 1.3rem;
+            color: #fff;
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            border-left: 4px solid #ff69b4;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .header h1, .girlfriend-name {
+                font-size: 2.5rem;
+            }
+            
+            .age-badge {
+                font-size: 1.5rem;
+                padding: 12px 25px;
+            }
+        }
+
+        .sparkle-effect {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #ff69b4;
+            border-radius: 50%;
+            animation: sparkle 2s linear infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+            50% { opacity: 1; transform: scale(1) rotate(180deg); }
+        }
+
+        .love-meter {
+            width: 100%;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        .love-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ff69b4, #ff1744);
+            width: 100%;
+            border-radius: 10px;
+            animation: love-pulse 2s ease-in-out infinite;
+            position: relative;
+        }
+
+        .love-fill::after {
+            content: '♥ 100% Cinta ♥';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+
+        @keyframes love-pulse {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-hearts">
+        <div class="heart">💖</div>
+        <div class="heart">💕</div>
+        <div class="heart">💗</div>
+        <div class="heart">💝</div>
+        <div class="heart">💞</div>
+        <div class="heart">💘</div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>💕 Selamat Ulang Tahun Cinta Hatiku 💕</h1>
+            <div class="love-message">Untuk Wanita Terhebat dalam Hidupku</div>
+            <div class="girlfriend-name">Nasya Yuanka Janwa</div>
+            <div class="age-badge">19 Tahun Cantikku</div>
+            <div class="love-cake">🎂💖</div>
+            <div class="love-meter">
+                <div class="love-fill"></div>
+            </div>
+            <p style="font-size: 1.3rem; margin-top: 20px; color: #e91e63;">1 Juni 2025 - Hari Istimewa untuk Bidadariku</p>
+        </div>
+
+        <div class="main-content">
+            <div class="card">
+                <h2>💌 Surat Cinta untuk Sayang</h2>
+                <div class="love-letter">
+                    <p>Sayang,</p>
+                    <br>
+                    <p>Selamat ulang tahun yang ke-19! Hari ini hari spesial kamu dan aku seneng banget bisa ngerayain bareng sama kamu.</p>
+                    <br>
+                    <p>Makasih udah jadi orang yang selalu <span class="romantic-highlight">bikin hari-hari aku lebih berarti</span>. Kamu tuh beneran orang paling baik yang pernah aku kenal.</p>
+                    <br>
+                    <p>Semoga di umur yang baru ini kamu sehat selalu, dimudahin dalam segala hal, dan <span class="romantic-highlight">semua impian kamu jadi kenyataan</span>.</p>
+                    <br>
+                    <p>Pokoknya aku sayang banget sama kamu dan semoga kita bisa terus bareng sampai lama. Happy birthday sayang! 💕</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>🎁 Hadiah Kata-kata</h2>
+                <div class="love-letter">
+                    <p>Kamu tau gak? Setiap hari bersamamu itu kayak hadiah yang selalu bikin aku senyum.</p>
+                    <br>
+                    <p>Di hari spesial ini, aku cuma mau bilang kalau <span class="romantic-highlight">kamu itu luar biasa</span> dan aku bersyukur banget bisa kenal sama kamu.</p>
+                    <br>
+                    <p>Semoga di umur yang baru ini, semua yang kamu impiin bisa terwujud, semua rencana kamu lancar, dan yang paling penting, <span class="romantic-highlight">kamu selalu bahagia</span>.</p>
+                    <br>
+                    <p>Thanks udah jadi bagian terpenting dalam hidup aku. Love you! 💕</p>
+                </div>
+            </div>
+
+            <div class="romantic-wishes">
+                <h2>💝 Harapan Cinta untuk Masa Depan Kita</h2>
+                
+                <div class="love-quote">
+                    "Yang terpenting itu bukan seberapa lama kita bersama, tapi seberapa bahagia kita bisa saling berbagi kebahagiaan"
+                </div>
+                
+                <div class="love-wish">
+                    <strong>💖 Kesehatan:</strong> Semoga kamu selalu sehat, kuat, dan gak pernah sakit. Biar bisa terus ketawa dan senyum terus kayak biasanya.
+                </div>
+                
+                <div class="love-wish">
+                    <strong>💰 Rezeki:</strong> Mudah-mudahan rezeki kamu lancar terus, dapet job yang bagus, dan semua kebutuhan selalu tercukupi.
+                </div>
+                
+                <div class="love-wish">
+                    <strong>📚 Kuliah/Karir:</strong> Semoga kuliahnya atau karirnya lancar, dapet nilai bagus, dan bisa mencapai semua target yang udah direncanain.
+                </div>
+                
+                <div class="love-wish">
+                    <strong>👨‍👩‍👧‍👦 Keluarga:</strong> Semoga keluarga kamu sehat semua, harmonis terus, dan selalu ada yang support kamu dalam segala hal.
+                </div>
+                
+                <div class="love-wish">
+                    <strong>💍 Kita Berdua:</strong> Semoga hubungan kita terus awet, makin hari makin kompak, dan bisa saling ngerti satu sama lain.
+                </div>
+                
+                <div class="love-wish">
+                    <strong>🌟 Impian:</strong> Apapun yang kamu cita-citain, semoga bisa terwujud semua. Aku bakal selalu dukung kamu dari belakang.
+                </div>
+                
+                <div class="love-quote">
+                    "Happy Birthday sayang! Semoga hari ini jadi awal dari tahun yang penuh surprise baik dan kebahagiaan. Aku sayang kamu! 💕"
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Membuat efek confetti berbentuk hati
+        function createHeartConfetti() {
+            const hearts = ['💖', '💕', '💗', '💝', '💞', '💘'];
+            
+            for (let i = 0; i < 30; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+                    confetti.style.position = 'fixed';
+                    confetti.style.left = Math.random() * 100 + '%';
+                    confetti.style.fontSize = (Math.random() * 20 + 15) + 'px';
+                    confetti.style.pointerEvents = 'none';
+                    confetti.style.zIndex = '1000';
+                    confetti.style.animation = 'confetti-fall 4s linear forwards';
+                    document.body.appendChild(confetti);
+                    
+                    setTimeout(() => {
+                        confetti.remove();
+                    }, 4000);
+                }, i * 150);
+            }
+        }
+
+        // Membuat efek sparkle romantis
+        function createRomanticSparkles() {
+            const sparkleContainer = document.querySelector('.header');
+            
+            for (let i = 0; i < 15; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle-effect';
+                sparkle.style.left = Math.random() * 100 + '%';
+                sparkle.style.top = Math.random() * 100 + '%';
+                sparkle.style.animationDelay = Math.random() * 2 + 's';
+                sparkleContainer.appendChild(sparkle);
+            }
+        }
+
+        // Animasi romantic reveal
+        function romanticReveal() {
+            const cards = document.querySelectorAll('.card, .romantic-wishes');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0) scale(1)';
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px) scale(0.95)';
+                card.style.transition = 'all 0.8s ease';
+                observer.observe(card);
+            });
+        }
+
+        // Efek klik pada floating hearts
+        document.querySelectorAll('.heart').forEach(heart => {
+            heart.style.cursor = 'pointer';
+            heart.style.pointerEvents = 'all';
+            heart.addEventListener('click', () => {
+                createHeartConfetti();
+                heart.style.animation = 'none';
+                heart.style.transform = 'scale(1.5)';
+                setTimeout(() => {
+                    heart.style.animation = 'float-heart 6s ease-in-out infinite';
+                    heart.style.transform = 'scale(1)';
+                }, 500);
+            });
+        });
+
+        // Efek hover pada cake
+        document.querySelector('.love-cake').addEventListener('mouseenter', () => {
+            createHeartConfetti();
+        });
+
+        // Pesan cinta yang muncul secara random
+        const loveMessages = [
+            "Sayang kamu! 💕",
+            "Kamu cantik banget! 💖",
+            "Happy birthday! 💗",
+            "Love you! 💝",
+            "Semoga bahagia selalu! 💞"
+        ];
+
+        function showRandomLoveMessage() {
+            const message = document.createElement('div');
+            message.innerHTML = loveMessages[Math.floor(Math.random() * loveMessages.length)];
+            message.style.position = 'fixed';
+            message.style.top = '20px';
+            message.style.right = '20px';
+            message.style.background = 'linear-gradient(45deg, #e91e63, #f06292)';
+            message.style.color = 'white';
+            message.style.padding = '15px 25px';
+            message.style.borderRadius = '25px';
+            message.style.fontSize = '1.2rem';
+            message.style.zIndex = '1001';
+            message.style.animation = 'slideInRight 0.5s ease, fadeOut 0.5s ease 2.5s forwards';
+            document.body.appendChild(message);
+            
+            setTimeout(() => {
+                message.remove();
+            }, 3000);
+        }
+
+        // Menambahkan keyframes untuk animasi pesan
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideInRight {
+                from { transform: translateX(100%); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+            @keyframes fadeOut {
+                from { opacity: 1; }
+                to { opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Menjalankan semua efek saat halaman dimuat
+        window.addEventListener('load', () => {
+            createHeartConfetti();
+            createRomanticSparkles();
+            romanticReveal();
+            
+            // Ulangi efek secara berkala
+            setInterval(createHeartConfetti, 15000);
+            setInterval(showRandomLoveMessage, 8000);
+            
+            // Pesan cinta pertama setelah 3 detik
+            setTimeout(showRandomLoveMessage, 3000);
+        });
+    </script>
+</body>
+</html>
